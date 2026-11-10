@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lume 2075 – Casa inteligente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <div><div class="brand">Lume<span>.</span>2075</div><div class="hello" id="hello">Sua casa está acordada e em equilíbrio.</div></div>
+    <div class="clock" id="clock">--:--<small>--</small></div>
+  </header>
+
+  <nav class="card rooms" id="rooms" aria-label="Cômodos"></nav>
+
+  <section class="card stage" aria-labelledby="roomTitle">
+    <div class="orbwrap">
+      <div class="ring"></div><div class="ring r2"></div>
+      <button class="orb" id="orb" aria-label="Ligar ou desligar a luz"></button>
+    </div>
+    <h2 id="roomTitle">Sala</h2>
+    <p id="roomState">Luz ligada</p>
+    <div class="row"><label for="bright">Brilho</label><input type="range" id="bright" min="5" max="100"><span class="val" id="brightV"></span></div>
+    <div class="swatches" id="swatches" aria-label="Cor da luz"></div>
+    <div class="chips" id="scenes" aria-label="Cenas"></div>
+  </section>
+
+  <section class="card climate" aria-labelledby="climTitle">
+    <h2 id="climTitle">Temperatura</h2>
+    <div class="dial">
+      <svg viewBox="0 0 200 200" aria-hidden="true"><circle class="track" cx="100" cy="100" r="80" stroke-dasharray="377 503"/><circle class="fill" id="fill" cx="100" cy="100" r="80" stroke-dasharray="377 503"/></svg>
+      <div class="dialnum"><b id="temp">22°</b><small id="mode">Automático</small></div>
+    </div>
+    <div class="step"><button class="round" id="minus" aria-label="Diminuir temperatura">−</button><button class="round" id="plus" aria-label="Aumentar temperatura">+</button></div>
+    <div class="chips" id="modes"></div>
+    <div class="inside"><div><b>23°</b>Fora</div><div><b>48%</b>Umidade</div><div><b>Pura</b>Ar</div></div>
+  </section>
+
+  <section class="card doors"><h2>Portas e acessos</h2><div class="grid" id="doors"></div></section>
+  <section class="card apps"><h2>Eletrodomésticos</h2><div class="grid appgrid" id="apps"></div></section>
+
+  <section class="card ai">
+    <span class="dot"></span>
+    <div class="say" id="say" aria-live="polite">Oi! Escreva um comando, como “apagar tudo” ou “trancar portas”.</div>
+    <form id="cmd"><input type="text" id="cmdIn" aria-label="Comando para a Lume" placeholder="Diga algo para a Lume…" autocomplete="off"><button>Enviar</button></form>
+  </section>
+</main>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
